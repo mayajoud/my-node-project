@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 // ✅ استخدمي المنفذ الذي توفره المنصة أو 5000 للتشغيل المحلي
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // ✅ تعديل مسار الملفات الثابتة ليكون داخل "public"
 const publicPath = path.join(__dirname, "public");
