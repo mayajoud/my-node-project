@@ -6,7 +6,7 @@ const app = express();
 
 // ✅ استخدمي المنفذ الذي توفره المنصة أو 5000 للتشغيل المحلي
 const PORT = process.env.PORT || 3000;
-
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 // ✅ تعديل مسار الملفات الثابتة ليكون داخل "public"
 const publicPath = path.join(__dirname, "public");
 
@@ -22,5 +22,5 @@ app.get("/", (req, res) => {
 
 // ✅ استخدام المنفذ الديناميكي
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🚀 الخادم يعمل على: http://0.0.0.0:${PORT}`);
+ console.log(`🚀 Server running on port ${PORT}`);
 });
