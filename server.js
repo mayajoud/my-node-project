@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 
 // استخدم المنفذ الذي توفره المنصة أو 5000 للتشغيل المحلي
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3306;
 
 // تحديد المسار الصحيح للملفات الثابتة
 const publicPath = path.join(__dirname, "public");
