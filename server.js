@@ -4,12 +4,11 @@ const cors = require("cors");
 
 const app = express();
 
-// ✅ استخدمي المنفذ الذي توفره المنصة أو 5000 للتشغيل المحلي
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// ✅ استخدمي المنفذ الذي توفره المنصة أو 3000 للتشغيل المحلي
+const PORT = process.env.PORT || 3000;
+
 // ✅ تعديل مسار الملفات الثابتة ليكون داخل "public"
 const publicPath = path.join(__dirname, "public");
-
 console.log("🛠️ المسار الصحيح للملفات الثابتة:", publicPath);
 app.use(express.static(publicPath));
 
@@ -20,7 +19,7 @@ app.get("/", (req, res) => {
   res.sendFile(filePath);
 });
 
-// ✅ استخدام المنفذ الديناميكي
+// ✅ تشغيل السيرفر مرة واحدة فقط
 app.listen(PORT, "0.0.0.0", () => {
- console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
