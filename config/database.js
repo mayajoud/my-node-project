@@ -6,7 +6,7 @@ const sequelize = new Sequelize(
   process.env.DB_USER, // اسم المستخدم
   process.env.DB_PASSWORD, // كلمة المرور
   {
-    host: "localhost", // عنوان الخادم
+    host: process.env.DB_HOST, // عنوان الخادم الذي تحصل عليه من Railway
     dialect: "mysql", // نوع قاعدة البيانات
     port: process.env.DB_PORT || 3306, // رقم المنفذ
     logging: false,
@@ -14,6 +14,7 @@ const sequelize = new Sequelize(
 );
 
 module.exports = sequelize;
+
 sequelize
   .authenticate()
   .then(() => console.log("✅ تم الاتصال بقاعدة البيانات بنجاح!"))
